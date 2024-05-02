@@ -7,8 +7,14 @@ const user = new User({ name: "myname", age: 23 });
 // console.log(user.get("name"));
 // console.log(user.get("age"));
 
-user.on("change", () => {});
-user.on("change", () => {});
-user.on("hgfy", () => {});
+user.on("change", () => {
+  console.log("Change #1");
+});
+user.on("change", () => {
+  console.log("Change #2");
+});
+user.on("save", () => {
+  console.log("Save was triggered");
+});
 
-console.log(user);
+user.trigger("save")
