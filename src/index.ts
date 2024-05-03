@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////
+
 // import { User } from "./models/User";
 
 // const user = new User({ name: "myname", age: 23 });
@@ -19,11 +21,25 @@
 
 // user.trigger("save")
 
-import axios from "axios";
+////////////////////////////////////////////////
 
-// axios.post("http://localhost:3000/users", {
-//   name: "myname",
-//   age: 20,
-// });
+// import axios from "axios";
 
-axios.get("http://localhost:3000/users/b366");
+// // axios.post("http://localhost:3000/users", {
+// //   name: "myname",
+// //   age: 20,
+// // });
+
+// axios.get("http://localhost:3000/users/3be3");
+
+//////////////////////////////////////////////////
+
+import { User } from "./models/User";
+
+const user = new User({ id: "3be3" });
+
+user.fetch();
+
+setTimeout(() => {
+  console.log(user);
+}, 4000);
