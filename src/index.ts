@@ -50,8 +50,14 @@ const user = new User({ name: "new record", age: 0 });
 //user.set({ name: "NEW NAME", age: 11 });
 // user.save();
 
-user.events.on("change", () => {
-  console.log("change!");
-});
+/////////////////////////////////////////
+// user.events.on("change", () => {
+//   console.log("change!");
+// });
 
-user.events.trigger("change");
+// user.events.trigger("change");
+
+/////////////////////////////////////////
+user.on("change", ()=>{
+  console.log("changed")
+})
