@@ -1,20 +1,29 @@
-import { User } from "./models/User";
+// import { User } from "./models/User";
 
-const user = new User({ name: "myname", age: 23 });
+// const user = new User({ name: "myname", age: 23 });
 
-// user.set({ name: "newname", age: 999 });
+// // user.set({ name: "newname", age: 999 });
 
-// console.log(user.get("name"));
-// console.log(user.get("age"));
+// // console.log(user.get("name"));
+// // console.log(user.get("age"));
 
-user.on("change", () => {
-  console.log("Change #1");
-});
-user.on("change", () => {
-  console.log("Change #2");
-});
-user.on("save", () => {
-  console.log("Save was triggered");
-});
+// user.on("change", () => {
+//   console.log("Change #1");
+// });
+// user.on("change", () => {
+//   console.log("Change #2");
+// });
+// user.on("save", () => {
+//   console.log("Save was triggered");
+// });
 
-user.trigger("save")
+// user.trigger("save")
+
+import axios from "axios";
+
+// axios.post("http://localhost:3000/users", {
+//   name: "myname",
+//   age: 20,
+// });
+
+axios.get("http://localhost:3000/users/b366");
