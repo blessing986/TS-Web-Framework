@@ -45,14 +45,14 @@ export class Model<T extends HasId> {
   }
 
   fetch(): void {
-    const id = this.attributes.get("id");
+    const id = this.get("id");
 
-    if (typeof id !== "number") {
+    if (typeof id !== "number" || "string") {
       throw new Error("Cannot fetch without an id");
     }
 
     this.sync.fetch(id).then((response: AxiosResponse): void => {
-      this.attributes.set(response.data);
+      this.set(response.data);
     });
   }
 
@@ -63,7 +63,7 @@ export class Model<T extends HasId> {
         this.trigger("save");
       })
       .catch(() => {
-        this.trigger("eror");
+        this.trigger("error");
       });
   }
 }
