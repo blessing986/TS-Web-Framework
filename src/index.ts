@@ -37,7 +37,8 @@
 import { User } from "./models/User";
 
 // const user = new User({ id: "3be3" });
-const user = new User({ name: "new record", age: 0 });
+// const user = new User({ name: "new record", age: 0 });
+const user = new User({ id: "3be3" });
 
 //////////////////////////////////////
 // user.fetch();
@@ -58,11 +59,12 @@ const user = new User({ name: "new record", age: 0 });
 // user.events.trigger("change");
 
 /////////////////////////////////////////
-console.log(user.get("name"));
+// console.log(user.get("name"));
 
 user.on("change", () => {
-  console.log("User was changed, we probably need to update some HTML");
+  console.log(user);
 });
 
 // user.trigger("change");
-user.set({ name: "New nane" });
+// user.set({ name: "New nane" });
+user.fetch();
