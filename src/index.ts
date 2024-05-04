@@ -69,12 +69,20 @@
 // // user.set({ name: "New nane" });
 // user.fetch();
 
-import { User } from "./models/User";
+//////////////////////////////////////////////
+// import { User } from "./models/User";
 
-const collection = User.buildUserCollection();
+// const collection = User.buildUserCollection();
 
-collection.on("change", () => {
-  console.log(collection);
-});
+// collection.on("change", () => {
+//   console.log(collection);
+// });
 
-collection.fetch();
+// collection.fetch();
+
+import { UserForm } from './views/UserForm';
+
+const userForm = new UserForm(document.getElementById('root'));
+
+userForm.render();
+
